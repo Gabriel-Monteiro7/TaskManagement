@@ -1,0 +1,116 @@
+@import "~bootstrap/scss/bootstrap";
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f1f1;
+  min-height: 100vh;
+}
+
+.container {
+  width: 478px;
+  height: 420px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  @include media-breakpoint-down(md) {
+    width: 90%;
+  }
+
+  // box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.24);
+  .container-inputs {
+    width: 80%;
+    flex-direction: column;
+    display: flex;
+  }
+  .container-input {
+    min-height: 76px;
+    position: relative;
+    i {
+      right: 3px;
+      position: absolute;
+      bottom: 30px;
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.42);
+    }
+    label {
+      margin: 0;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+    input {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        border: 0;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.42);
+        width: 100%;
+        outline: none;
+      }
+      &.input-password {
+        padding-right: 30px;
+      }
+    }
+    .ng-invalid.ng-touched:not(form) {
+      border-color: #fa5858;
+    }
+    .error {
+      font-size: 12px;
+      color: #fa5858;
+    }
+  }
+  .button-submit {
+    border: 0px;
+    background: #1d0e60;
+    margin: 20px auto;
+    color: white;
+    padding: 14px 70px;
+    border-radius: 50px;
+    opacity: 0.9;
+    transition: 0.2s ease;
+    min-width: 210px;
+    &:active {
+      opacity: 1;
+    }
+    &.error {
+      opacity: 0.9;
+    }
+    @include media-breakpoint-down(md) {
+      min-width: 170px;
+      padding: 10px 70px;
+    }
+  }
+  .button-option {
+    background: transparent;
+    width: 140px;
+    border: 0;
+    font-weight: bold;
+    color: #1d0e60;
+    padding-bottom: 10px;
+    font-size: 18px;
+    &.selected {
+      color: #18c78a;
+      border-bottom: 2px solid #18c78a;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 16px;
+      width: 120px;
+    }
+  }
+}
+.forgot-password {
+  margin: auto;
+  color: #1d0e60;
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="home">
+  <div class="container">
+    <h1>Tarefas</h1>
+
+    <div class="list" *ngIf="tasks$ | async as tasks; else loading">
+      <div class="card" *ngFor="let task of tasks">
+        <div class="image"></div>
+        <div class="card-priority">{{ task.priority }}</div>
+        <div class="card-information">
+          <h3 class="card-title">{{ task.name }}</h3>
+          <div class="description">{{ task.description }}</div>
+          <span class="deadline"
+            >{{ task.deadline }}
+            <p
+              class="{{
+                compareDate(task.deadline)
+                  ? ''
+                  : task.completed
+                  ? 'true'
+                  : 'false'
+              }}"
+            >
+              {{
+                compareDate(task.deadline)
+                  ? "Expirada"
+                  : task.completed
+                  ? "Concluída"
+                  : "Não Concluída"
+              }}
+            </p></span
+          >
+        </div>
+        <button
+          [class.expired]="compareDate(task.deadline)"
+          class="button-card"
+          title="Editar tarefa"
+          [disabled]="compareDate(task.deadline)"
+          (click)="onChangeTask(task)"
+        >
+          <i class="fas fa-pen"></i>
+        </button>
+        <button
+          class="button-delete"
+          title="Deletar tarefa"
+          (click)="onDelete(task)"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="no-tasks" *ngIf="tasks.length === 0">
+        Não existe Tarefas cadastrados
+      </div>
+    </div>
+    <ng-template #loading>
+      <lottie></lottie>
+    </ng-template>
+  </div>
+</div>

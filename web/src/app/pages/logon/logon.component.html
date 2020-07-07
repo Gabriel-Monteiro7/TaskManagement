@@ -1,0 +1,82 @@
+<div class="content">
+  <div class="container">
+    <div>
+      <button
+        class="button-option"
+        [class.selected]="button === typeFormSelected"
+        *ngFor="let button of typeForm"
+        (click)="onChangeForm(button)"
+      >
+        {{ button }}
+      </button>
+    </div>
+    <form class="container-inputs" (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="container-input" *ngIf="typeFormSelected === 'Cadastrar'">
+        <label
+          [class.error]="!form.get('name').valid && form.get('name').touched"
+          >Nome</label
+        >
+        <input type="text" placeholder="Seu name" formControlName="name" />
+        <span
+          *ngIf="!form.get('name').valid && form.get('name').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-input">
+        <label
+          [class.error]="!form.get('email').valid && form.get('email').touched"
+          >Email</label
+        >
+        <input
+          type="email"
+          placeholder="Seu email"
+          formControlName="email"
+          email
+        />
+        <span
+          *ngIf="!form.get('email').valid && form.get('email').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-input">
+        <label
+          [class.error]="
+            !form.get('password').valid && form.get('password').touched
+          "
+          >Senha</label
+        >
+        <input
+          type="{{ visible ? 'text' : 'password' }}"
+          placeholder="Sua senha"
+          formControlName="password"
+          class="input-password"
+        />
+        <i
+          class="fas {{ visible ? 'fa-eye-slash' : 'fa-eye' }}"
+          (click)="onChangeVisible()"
+        ></i>
+        <span
+          *ngIf="!form.get('password').valid && form.get('password').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <span
+        (click)="forgotPassword()"
+        *ngIf="typeFormSelected === 'Entrar'"
+        class="forgot-password"
+        >Esqueceu a senha?</span
+      >
+      <button
+        [disabled]="!form.valid"
+        [class.error]="!form.valid"
+        class="button-submit"
+        type="submit"
+      >
+        {{ typeFormSelected }}
+      </button>
+    </form>
+  </div>
+</div>
