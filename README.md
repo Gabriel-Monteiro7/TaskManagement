@@ -1,4 +1,4 @@
-# [](<[https://github.com/Gabriel-Monteiro7/TaskManagement](https://github.com/Gabriel-Monteiro7/TaskManagement)>>) :large_blue_diamond: Gerenciador de tarefas
+# [](<[https://github.com/Gabriel-Monteiro7/TaskManagement](https://github.com/Gabriel-Monteiro7/TaskManagement)>) :large_blue_diamond: Gerenciador de tarefas
 
 ## [](<[https://github.com/Gabriel-Monteiro7/TaskManagement](https://github.com/Gabriel-Monteiro7/TaskManagement)#Descrição>)Descrição
 
