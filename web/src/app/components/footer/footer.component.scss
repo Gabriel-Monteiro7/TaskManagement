@@ -1,0 +1,45 @@
+.footer {
+  background: #111111;
+  color: white;
+  padding: 40px 0px;
+  border-top: 0.5px #9ba5b3;
+  .logo {
+    font-size: 35px;
+    cursor: pointer;
+    outline: none;
+  }
+  .copyright {
+    a {
+      color: rgb(184, 184, 184);
+      text-decoration: none;
+      padding: 0px 10px;
+      &:hover {
+        color: white;
+      }
+    }
+    border-top: 1px solid;
+    padding-top: 0px;
+    font-size: 13px;
+
+    div {
+      padding: 0px;
+    }
+  }
+  .icones {
+    a {
+      margin: 0px 5px;
+      padding: 3px;
+      i {
+        transition: 0.3s linear;
+        font-size: 20px;
+        opacity: 0.5;
+        color: white;
+      }
+      &:hover {
+        i {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

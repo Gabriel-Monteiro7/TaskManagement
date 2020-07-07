@@ -1,0 +1,149 @@
+@import "~bootstrap/scss/bootstrap";
+
+.home {
+  // background: #f3f3f3;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  color: #1d0e60;
+  padding: 30px 0px 50px;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    @include media-breakpoint-down(lg) {
+      justify-content: center;
+    }
+  }
+  .card {
+    margin: 10px;
+    height: 320px;
+    position: relative;
+    border-radius: 2px;
+    background: #ffffff;
+    border: 0;
+    box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.24);
+
+    width: 230px;
+    @include media-breakpoint-down(lg) {
+      margin: 20px;
+    }
+    .image {
+      background-color: #565656;
+      height: 165px;
+      border-radius: 2px 2px 0px 0px;
+    }
+    .card-priority {
+      min-width: 69px;
+      text-align: center;
+      padding: 2px 10px;
+      color: #ffffff;
+      top: 20px;
+      border-radius: 1.5px;
+      position: absolute;
+      background-color: #18c78a;
+      font-weight: bold;
+      left: -10px;
+      box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.24);
+      font-size: 10px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px 0px 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      margin: 0;
+      text-overflow: ellipsis;
+      @include media-breakpoint-down(sm) {
+        font-size: 15px;
+        padding: 5px 0px 8px;
+      }
+    }
+    .description {
+      font-size: 14px;
+      color: #565656;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+    .deadline {
+      font-weight: bold;
+      font-size: 12px;
+      color: #565656;
+      p {
+        margin: 0;
+        color: #565656a6;
+        &.false {
+          color: #fa5858;
+        }
+        &.true {
+          color: #58fa58;
+        }
+      }
+    }
+    .card-information {
+      padding: 10px;
+    }
+    .button-card {
+      width: 36px;
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      padding: 0px;
+      height: 36px;
+      font-size: 10px;
+      border-radius: 100%;
+      background: #ffffff;
+      box-shadow: 2px 3px 6px 0 rgba(0, 0, 0, 0.24);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+      &.expired {
+        opacity: 0.8;
+      }
+      i {
+        color: #565656;
+        font-size: 12px;
+      }
+    }
+    .button-delete {
+      transition: 0.5s ease-in-out;
+      position: absolute;
+      background: #ffffff29;
+      height: 35px;
+      top: 0;
+      width: 35px;
+      right: 0;
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+      border-radius: 0;
+      i {
+        right: 5px;
+        position: absolute;
+        top: 5px;
+        color: white;
+        font-size: 10px;
+      }
+      &:hover {
+        background: #fa5858;
+      }
+    }
+  }
+}
+.no-tasks {
+  color: #d8d8d8;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  min-height: 390px;
+  @include media-breakpoint-down(md) {
+    font-size: 20px;
+  }
+}

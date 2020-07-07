@@ -1,0 +1,70 @@
+@import "~bootstrap/scss/bootstrap";
+
+.register {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #f1f1f1;
+  color: #1d0e60;
+}
+.container-inputs {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .container-input {
+    width: 49%;
+    min-height: 95px;
+    label {
+      font-weight: bold;
+    }
+    span {
+      font-size: 12px;
+    }
+    .error {
+      color: #fa5858;
+    }
+    input,
+    select,
+    textarea {
+      height: 50px;
+      width: 100%;
+      border: 0;
+      border-radius: 9px;
+      padding: 10px;
+      outline: none;
+      background: #ffffff;
+      &:active,
+      &:focus {
+        border-color: #381db1;
+        box-shadow: 0 0 0 2px #381db1;
+      }
+    }
+    select {
+      cursor: pointer;
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+  .button-submit {
+    font-weight: bold;
+    width: 180px;
+    margin: 20px auto;
+    border: 0;
+    background: #1d0e60;
+    color: white;
+    padding: 12px 40px;
+    opacity: 0.9;
+    border-radius: 50px;
+    &:active {
+      opacity: 1;
+    }
+    &.error {
+      opacity: 0.9;
+    }
+  }
+}
+.container-button {
+  width: 100%;
+  text-align: center;
+}
