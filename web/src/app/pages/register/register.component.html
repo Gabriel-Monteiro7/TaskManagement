@@ -1,0 +1,109 @@
+<div class="register">
+  <div class="container">
+    <h1>
+      {{
+        this.typeFormSelected === "Editar"
+          ? "Editar Tarefas"
+          : "Cadastro de Tarefas"
+      }}
+    </h1>
+
+    <form class="container-inputs" (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="container-input">
+        <label
+          [class.error]="!form.get('name').valid && form.get('name').touched"
+          >Tarefa</label
+        >
+        <input type="text" placeholder="Seu name" formControlName="name" />
+        <span
+          *ngIf="!form.get('name').valid && form.get('name').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-input">
+        <label
+          [class.error]="
+            !form.get('deadline').valid && form.get('deadline').touched
+          "
+          >Prazo para realizar a tarefa</label
+        >
+        <input type="date" formControlName="deadline" min="{{ year }}" />
+      </div>
+      <div class="container-input">
+        <label
+          [class.error]="
+            !form.get('priority').valid && form.get('priority').touched
+          "
+          >Prioridade</label
+        >
+        <select formControlName="priority">
+          <option value="null" selected disabled hidden
+            >Escolha uma Opção</option
+          >
+          <option *ngFor="let option of options" value="{{ option }}"
+            >{{ option }}
+          </option>
+        </select>
+        <span
+          *ngIf="!form.get('priority').valid && form.get('priority').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-input">
+        <label
+          [class.error]="
+            !form.get('description').valid && form.get('description').touched
+          "
+          >Descrição</label
+        >
+        <textarea
+          placeholder="Descrição da tarefa"
+          formControlName="description"
+          maxlength="80"
+        ></textarea>
+        <span
+          *ngIf="
+            !form.get('description').valid && form.get('description').touched
+          "
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-input" *ngIf="typeFormSelected === 'Editar'">
+        <label
+          [class.error]="
+            !form.get('completed').valid && form.get('completed').touched
+          "
+          >Situação da tarefa</label
+        >
+        <select formControlName="completed">
+          <option value="null" selected disabled hidden
+            >Escolha uma Opção</option
+          >
+          <option
+            *ngFor="let option of optionsBoolean"
+            value="{{ option.value }}"
+            >{{ option.title }}
+          </option>
+        </select>
+        <span
+          *ngIf="!form.get('completed').valid && form.get('completed').touched"
+          class="error"
+          >Campo Obrigatorio</span
+        >
+      </div>
+      <div class="container-button">
+        <button
+          [disabled]="!form.valid"
+          [class.error]="!form.valid"
+          class="button-submit"
+          type="submit"
+        >
+          {{ typeFormSelected }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

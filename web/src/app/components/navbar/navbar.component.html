@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light py-4">
+  <div class="container">
+    <a title="Vá para a Home" class="navbar-brand" routerLink="/home">
+      <i class="fab fa-canadian-maple-leaf fa-lg"></i>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100">
+        <li
+          routerLinkActive="active"
+          title="{{ option.title }}"
+          class="nav-item"
+          *ngFor="let option of options"
+        >
+          <span class="nav-link" routerLink="{{ option.slug }}">{{
+            option.title
+          }}</span>
+        </li>
+
+        <li title="Nome" class="nav-item name">
+          <span class="nav-link">{{ user.name }}</span>
+        </li>
+        <li title="Sair" (click)="logout()">
+          <button class="button-logout">
+            <i class="fas fa-power-off"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

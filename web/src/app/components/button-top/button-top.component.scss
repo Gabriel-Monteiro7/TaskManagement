@@ -1,0 +1,25 @@
+.button {
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease-in-out;
+  font-size: 14px;
+  right: 15px;
+  border-radius: 100%;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  background: #1b0b63;
+  bottom: 0px;
+  margin-bottom: 20px;
+  position: fixed;
+  cursor: pointer;
+  i {
+    transition: 0.3s ease-in-out;
+    color: white;
+    border-radius: 180%;
+  }
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
